@@ -6,9 +6,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/fastssh.git"
+    "url": "https://github.com/ParthKarena03/Fastssh.git"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/fastssh#readme",
+  "homepage": "https://github.com/ParthKarena03/Fastssh#readme",
   "keywords": [
     "ssh",
     "connection",

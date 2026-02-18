@@ -1,79 +1,113 @@
 # FastSSH
 
-**One-command SSH connections to your favorite servers.**
+> One-command SSH access to your favorite servers.
 
-Tired of remembering IP addresses, usernames, and SSH keys? FastSSH lets you save your servers and connect in seconds.
+Tired of remembering IP addresses, usernames, ports, and key paths?  
+**FastSSH** lets you save servers once and connect instantly.
 
-## Features
+---
 
-✅ **One-command connections** - `fastssh myserver` instead of `ssh -i ~/.ssh/id_rsa deploy@203.0.113.45 -p 2222`  
-✅ **Auto key setup** - Automatically generates and installs your SSH key on servers  
-✅ **Save all your servers** - Remember all your servers with one simple name  
-✅ **Custom SSH ports** - Support for non-standard SSH ports  
-✅ **Secure** - Uses SSH keys (never stores passwords)  
-✅ **Cross-platform** - Works on Linux, macOS, and Windows
+## ✨ Features
 
-## Installation
+- 🚀 **One-command connections**  
+  `fastssh myserver` instead of long SSH commands
+
+- 🔐 **Automatic key setup**  
+  Generates and installs SSH keys for you
+
+- 📁 **Save unlimited servers**  
+  Assign simple names to hosts
+
+- 🔌 **Custom SSH ports supported**
+
+- 🛡 **Secure**  
+  Uses SSH keys — passwords are never stored
+
+- 🌍 **Cross-platform**  
+  Works on Linux, macOS, and Windows
+
+---
+
+## 📦 Installation
+
+Install globally (recommended):
 
 ```bash
 npm install -g fastssh
 ```
 
-Or use locally:
-
+Install locally 
 ```bash
-npm install
-npm link
+npm i fastssh
 ```
 
-## Quick Start
+Or run without installing:
 
-### 1. Add a Server
+```bash
+npx fastssh
+```
+
+---
+
+## 🚀 Quick Start
+
+### 1 — Add a server
 
 ```bash
 fastssh init myserver
 ```
 
-You'll be prompted for:
+You’ll be prompted for:
 
-- **IP**: Server's IP address
-- **User**: SSH username
-- **SSH Port**: Port number (default: 22)
-- **Password**: One-time password (only used to install your key)
+- IP — server address  
+- User — SSH username  
+- Port — SSH port (default 22)  
+- Password — used once to install your key  
 
-### 2. Connect to a Server
+---
+
+### 2 — Connect instantly
 
 ```bash
 fastssh myserver
 ```
 
-You'll get an interactive SSH shell. Type `exit` to disconnect.
+You’ll get an interactive SSH session.  
+Type `exit` to disconnect.
 
-### 3. List Saved Servers
+---
+
+### 3 — List saved servers
 
 ```bash
 fastssh list
 ```
 
-### 4. Remove a Server
+---
+
+### 4 — Remove a server
 
 ```bash
 fastssh remove myserver
 ```
 
-## Commands
+---
 
-```bash
-fastssh init <name>       # Add a new server
-fastssh <name>            # Connect to a server
-fastssh list              # List all saved servers
-fastssh remove <name>     # Remove a server
-fastssh diagnose [name]   # Check your SSH setup
+## 📚 Commands
+
+```
+fastssh init <name>        Add a new server
+fastssh <name>             Connect to a server
+fastssh list               List saved servers
+fastssh remove <name>      Remove a server
+fastssh diagnose [name]    Diagnose connection issues
 ```
 
-## Examples
+---
 
-### Add Multiple Servers
+## 💡 Examples
+
+### Add multiple servers
 
 ```bash
 fastssh init web1
@@ -81,83 +115,102 @@ fastssh init database
 fastssh init production
 ```
 
-### Check Your Servers
+---
+
+### View saved servers
 
 ```bash
 fastssh list
-# Output:
-# - database
-# - production
-# - web1
 ```
 
-### Connect to Any Server
+Example output:
+
+```
+database
+production
+web1
+```
+
+---
+
+### Connect
 
 ```bash
 fastssh web1
-fastssh database
-fastssh production
 ```
 
-## Troubleshooting
+---
 
-### "Permission denied (publickey)"
+## 🛠 Troubleshooting
 
-**Problem:** SSH key authentication failed.
+### Permission denied (publickey)
 
-**Solutions:**
+**Cause:** Key authentication failed
 
-1. Try setup again: `fastssh init myserver`
-2. Make sure your password is correct when prompted
-3. Verify SSH is enabled on the server
+Try:
 
-### "Connection refused" or "Connection timed out"
+- Re-run setup → `fastssh init myserver`
+- Ensure password was correct
+- Verify SSH is enabled on server
 
-**Problem:** Can't reach the server.
+---
 
-**Solutions:**
+### Connection refused / timed out
 
-1. Check IP address: `fastssh list` to verify correct IP
-2. Verify server is running
-3. Check firewall allows SSH connections
+**Cause:** Cannot reach server
 
-### "Server not found"
+Check:
 
-**Problem:** The server doesn't exist.
+- IP address
+- Server status
+- Firewall rules
 
-**Solution:**
+---
+
+### Server not found
 
 ```bash
-fastssh list              # Check what servers exist
-fastssh init newserver    # Add a new server
+fastssh list
 ```
 
-## Security Notes
+If missing:
 
-⚠️ **Never share your private key** (`~/.ssh/id_rsa`)
+```bash
+fastssh init newserver
+```
 
-⚠️ **Keep backups** - If you lose your private key, you won't be able to SSH to any server
+---
 
-⚠️ **Use strong passwords** - When setting up new servers, use strong passwords
+## 🔐 Security Notes
 
-## Contributing
+- Never share your private key
+- Keep backups of your key
+- Use strong server passwords during setup
 
-Found a bug or want a feature?
+---
 
-1. Open an issue with details
-2. Describe what happened and what you expected
+## 🤝 Contributing
 
-## License
+Found a bug or have an idea?
+
+1. Open an issue
+2. Describe expected vs actual behavior
+
+---
+
+## 📄 License
 
 MIT
 
-## Changelog
+---
+
+## 📜 Changelog
 
 ### v1.0.0
 
-- ✅ SSH key-based authentication
-- ✅ Custom SSH ports support
-- ✅ Public key auto-installation
-- ✅ Server removal with remote cleanup
-- ✅ Diagnostic command
-- ✅ Configuration storage
+- SSH key authentication
+- Custom ports support
+- Automatic key installation
+- Server removal cleanup
+- Diagnostics command
+- Config storage
