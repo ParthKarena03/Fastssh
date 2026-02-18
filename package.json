@@ -1,6 +1,6 @@
 {
   "name": "fastssh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "One-command SSH login tool - Save and quickly connect to SSH servers",
   "author": "Parth Karena",
   "license": "MIT",
