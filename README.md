@@ -49,6 +49,12 @@ npx fastssh
 
 ---
 
+<p style="color:#b45309; font-weight:bold;">
+⚠ If you installed FastSSH locally using <code>npm i fastssh</code>, you must use prefix commands with <code>npx</code>.
+Example: <code>npx fastssh list</code>
+</p>
+
+---
 ## 🚀 Quick Start
 
 ### 1 — Add a server

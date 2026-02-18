@@ -196,8 +196,8 @@ export async function init(name) {
       message: "SSH Port:",
       default: 22,
       validate: (input) => {
-        const port = parseInt(input);
-        if (isNaN(port) || port < 1 || port > 65535) {
+        const port = Number.parseInt(input);
+        if (Number.isNaN(port) || port < 1 || port > 65535) {
           return "Port must be between 1 and 65535";
         }
         return true;
